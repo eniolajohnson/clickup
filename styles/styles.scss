@@ -60,6 +60,10 @@ body {
       text-decoration: none;
       font-size: 0.6rem;
     }
+
+    & > li > .text_active {
+      font-size: 0.7rem;
+    }
   }
 
   .nav__logo {
@@ -71,6 +75,7 @@ body {
   .nav__button {
     flex: 2;
     text-align: end;
+    font-size: 0.7rem;
 
     @include tablet {
       display: none;
@@ -535,7 +540,7 @@ body {
   @extend %size-align;
   border-radius: 30px;
   background-color: $purple;
-  height: 55vh;
+  height: 58vh;
 
   @include tablet-pro {
     height: 26vh;
@@ -917,6 +922,7 @@ hr {
 
       & > h3 {
         width: 80%;
+        font-size: 75%;
         margin-left: 3%;
 
         @include tablet {

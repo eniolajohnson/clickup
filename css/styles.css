@@ -36,13 +36,16 @@ body {
     .header .nav__links > li > a {
       text-decoration: none;
       font-size: 0.6rem; }
+    .header .nav__links > li > .text_active {
+      font-size: 0.7rem; }
   .header .nav__logo {
     width: 40%;
     cursor: pointer;
     flex: 0.5; }
   .header .nav__button {
     flex: 2;
-    text-align: end; }
+    text-align: end;
+    font-size: 0.7rem; }
     @media screen and (max-width: 768px) {
       .header .nav__button {
         display: none; } }
@@ -382,7 +385,7 @@ body {
   padding: 2% 0;
   border-radius: 30px;
   background-color: #9C69EC;
-  height: 55vh; }
+  height: 58vh; }
   @media screen and (max-width: 1024px) {
     .testimonials {
       height: 26vh; } }
@@ -631,6 +634,7 @@ hr {
             text-align: center; } }
       .footer__info__title > h3 {
         width: 80%;
+        font-size: 75%;
         margin-left: 3%; }
         @media screen and (max-width: 768px) {
           .footer__info__title > h3 {
