@@ -1,0 +1,933 @@
+@import 'colors';
+@import 'media-queries';
+
+%align-item-row {
+  display: flex;
+  flex-direction: row;
+}
+
+%size-align {
+  margin: auto;
+  width: 60%;
+}
+
+%title-font {
+  font-family: "Helvetica";
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+.header {
+  padding-top: 2%;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, $background, $white);
+
+  & > div {
+    @extend %size-align;
+  }
+
+  @include mobile {
+      margin-top: 5%;
+    }
+
+  nav {
+    @extend %size-align;
+    font-size: 11px;
+    @extend %align-item-row;
+  }
+
+  .nav__links {
+    @extend %align-item-row;
+    flex: 1.5;
+    justify-content: space-between;
+    align-items: center;
+
+    & > li{
+      list-style: none;
+    }
+
+    & > li > a {
+      text-decoration: none;
+      font-size: 0.6rem;
+    }
+  }
+
+  .nav__logo {
+    width: 40%;
+    cursor: pointer;
+    flex: 0.5;
+  }
+
+  .nav__button {
+    flex: 2;
+    text-align: end;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  .headline {
+    position: relative;
+    margin-top: 10%;
+
+    & > div > p {
+      margin: 3% 0 1.5% 0;
+      width: 28%;
+      font-size: 10px;
+
+      @include tablet {
+        margin: 2.5% 0;
+      }
+
+      @include mobile {
+        font-size: 6px;
+      }
+    }
+
+    & > img {
+      position: absolute;
+      top: 29%;
+      left: 42%;
+      width: 70%;
+      z-index: 0;
+    }
+
+    @include tablet {
+      & > div > h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @include mobile {
+      margin-top: 18%;
+      & > div > h1 {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.text_active {
+  font-weight: bold;
+  color: $blue;
+}
+
+.text_grey {
+  color: $grey;
+  font-size: 54%;
+}
+
+.btn {
+  font-family: 'Nunito';
+  font-size: 10px;
+  border-radius: 50px;
+}
+
+.btn_white {
+  background-color: $white;
+  border: none;
+  width: 32%;
+  padding: 2% 0%;
+  box-shadow: 0px 5px 5px 0px #4B5D681A;
+}
+
+.btn_purple {
+  width: 6rem;
+  border: none;
+  color: white;
+  background-color: $purple;
+  padding: 1.5% 0;
+}
+
+.purple_arrow {
+  color: $purple;
+  margin-left: 3%;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@include mobile {
+  .btn_purple {
+    width: 18%;
+    font-size: 6px;
+  }
+}
+
+.title_big {
+  @extend %title-font;
+  font-size: 3.4rem;
+  width: 64%;
+}
+
+.title_medium {
+  @extend %title-font;
+  font-weight: 700;
+  font-size: 1.5rem;
+  width: 80%;
+}
+
+.title_small {
+  @extend %title-font;
+  font-weight: 400;
+  font-size: 80%;
+  width: 80%;
+}
+
+.features__image1 {
+  position: absolute;
+  width: 16%;
+  top: 32.5%;
+  right: 83%;
+
+  @include tablet {
+    right: 86%;
+  }
+
+  @include mobile {
+    width: 30%;
+    top: 20%;
+    right: 72%;
+  }
+}
+
+.features__image2 {
+  position: absolute;
+  width: 16%;
+  top: 30%;
+  left: 51%;
+
+  @include tablet {
+    left: 48%;
+  }
+
+  @include mobile {
+    width: 30%;
+    top: 42%;
+    left: 0%;
+  }
+}
+
+.features__image3 {
+  position: absolute;
+  width: 16%;
+  top: 77%;
+  left: 1.6%;
+
+  @include tablet {
+    left: 0.04%;
+    top: 75%;
+  }
+
+  @include mobile {
+    width: 30%;
+    top: 62.5%;
+    left: 0.04%;
+  }
+}
+
+.features__image4 {
+  position: absolute;
+  width: 16%;
+  top: 75%;
+  right: 33%;
+
+  @include tablet {
+    right: 35%;
+    top: 75%;
+  }
+
+  @include mobile {
+    width: 30%;
+    top: 84.5%;
+    left: 0.04%;
+  }
+}
+
+.about {
+  width: 100%;
+  margin-left: 0 5%;
+  margin-top: 11%;
+
+  @include mobile {
+    margin-bottom: 10%;
+  }
+
+  &__container {
+    @extend %size-align;
+    @extend %align-item-row;
+    flex-direction: row-reverse;
+    background: rgba(240, 99, 184, 0.15);
+    border-radius: 20px;
+
+    & > div {
+      &:nth-child(1) {
+        width: 70%;
+        margin-left: 8%;
+
+        @include tablet {
+        width: 70%;
+        margin-left: 5%;
+        }
+      }
+
+      &:nth-child(2) {
+        @include tablet {
+          width: 30%;
+          padding-top: 6%;
+        }
+      }
+
+      img {
+        width: 100%;
+        @include tablet {
+          margin-bottom: 5%;
+        }
+      }
+
+      h3 {
+        margin-top: 18%;
+        @include tablet {
+          margin-top: 10%;
+          width: 70%;
+          font-size: 95%;
+        }
+
+        @include mobile {
+          font-size: 70%;
+        }
+      }
+
+      p {
+        margin-top: 5%;
+        font-size: 60%;
+        width: 70%;
+        @include tablet {
+          font-size: 50%;
+        }
+
+        @include mobile {
+          font-size: 35%;
+          margin-bottom: 5%;
+        }
+      }
+    }
+  }
+}
+
+.features {
+  @extend %size-align;
+  margin-top: 5%;
+  position: relative;
+
+  @include mobile {
+    margin-top: 8%;
+  }
+
+  &__header{
+    text-align: center;
+
+    & > h1 {
+      @extend %size-align;
+      margin-top: 2%;
+      margin-bottom: 3%;
+      width: 30%;
+      @include mobile {
+        width: 100%;
+      }
+    }
+
+     & > p {
+      text-align: center;
+      font-size: 60%;
+      margin-top: 8%;
+      text-align: center;
+      width: 55%;
+      margin: auto;
+    }
+  }
+
+  &__list > div > div {
+    margin: auto;
+    margin-top: 5%;
+    padding-top: 2%;
+    padding-left: 12%;
+    padding-right: 3%;
+    position: relative;
+    z-index: -1;
+
+    & > h3 {
+      margin-top: 15%;
+      margin-bottom: 8.5%;
+      width: 100%;
+      margin-left: 10%;
+      @include mobile {
+        font-size: 55%;
+        text-align: center;
+        margin-left: 0%;
+      }
+    }
+
+    & > p {
+      width: 80%;
+      margin-left: 10%;
+      @include mobile {
+        padding: 0 2%;
+        font-size: 50%;
+      }
+    }
+
+    & > button {
+      width: 50%;
+      border: none;
+      text-align: start;
+      position: absolute;
+      bottom: 3%;
+      margin-left: 6%;
+
+      & > span {
+        margin-left: 4%;
+      }
+    }
+  }
+
+  &__list > div:nth-child(1) > div:nth-child(1) {
+    background-color: rgba($mint, 0.1%);
+    & > .bean-sprout {
+      padding: 0 1%;
+      position: absolute;
+      width: 45%;
+      right: 5%;
+      bottom: 56%;
+      z-index: -1;
+    }
+
+    & > .small-bean {
+      padding: 0 1%;
+      position: absolute;
+      width: 10%;
+      right: 26%;
+      top: 13%;
+      z-index: -1;
+    }
+
+    & > button {
+      background-color: rgba($mint, 0.01%);
+
+      & > span {
+        color: $purple;
+      }
+    }
+  }
+
+  &__list > div:nth-child(1) > div:nth-child(2) {
+    background-color: rgba($purple, 0.1%);
+    & > .bean-sprout {
+      padding: 0 1%;
+      position: absolute;
+      width: 55%;
+      top: 36%;
+      left: 43%;
+      z-index: -1;
+    }
+
+    & > button {
+      background-color: rgba($purple, 0.01%);
+
+      & > span {
+        color: $purple;
+      }
+    }
+  }
+
+  &__list > div:nth-child(2) > div:nth-child(1) {
+    background-color: rgba($pink, 0.1%);
+    & > .small-bean {
+      padding: 0 1%;
+      position: absolute;
+      width: 16%;
+      top: 5%;
+      left: 79%;
+      z-index: -1;
+    }
+
+    & > button {
+      background-color: rgba($pink, 0.01%);
+
+      & > span {
+        color: $purple;
+      }
+    }
+  }
+
+  &__list > div:nth-child(2) > div:nth-child(2) {
+    background-color: rgba($blue2, 0.1%);
+    & > .small-bean {
+      padding: 0 1%;
+      position: absolute;
+      width: 16%;
+      top: 82%;
+      left: 75%;
+      z-index: -1;
+    }
+
+    & > .bean-sprout {
+      padding: 0 1%;
+      position: absolute;
+      width: 60%;
+      top: 11%;
+      right: 25%;
+      z-index: -1;
+    }
+
+    & > button {
+      background-color: rgba($blue2, 0.01%);
+
+      & > span {
+        color: $purple;
+      }
+    }
+  }
+}
+
+.div-split {
+  @extend %align-item-row;
+
+  @include mobile {
+    display: block;
+  }
+}
+
+.angled-div {
+  display: block;
+  width: 41%;
+  height: 170px;
+  border-radius: 25px;
+  border-top-left-radius: 4px;
+  clip-path: polygon(21% 1%, 100% 0%, 100% 100%, 0 100%);
+
+  @include tablet {
+    width: 42%;
+  }
+
+  @include mobile {
+    width: 70%;
+  }
+}
+
+.testimonials {
+  margin-top: 5%;
+  padding: 2% 0;
+  @extend %size-align;
+  border-radius: 30px;
+  background-color: $purple;
+  height: 55vh;
+
+  @include tablet-pro {
+    height: 26vh;
+  }
+
+  @include tablet {
+    height: 30vh;
+  }
+
+  @include mobile {
+    height: 28vh;
+  }
+
+  & > h1 {
+    color: $white;
+    padding-left: 5%;
+
+    @include mobile {
+      padding-top: 6%;
+      font-size: 90%;
+    }
+  }
+
+  & > div {
+    @extend %align-item-row;
+    margin-top: 3%;
+
+    & > .testimonial_big {
+      @extend %align-item-row;
+      border-radius: 20px;
+      margin-left: 5%;
+      margin-right: 4%;
+      background: $white;
+      border-radius: 20px;
+      border: 1px solid #9C69E2;
+      box-sizing: border-box;
+      padding: 4% 3%;
+      box-shadow: 0px 10px 0px rgba(#8a56db, 0.7);
+
+      @include mobile {
+        height: 15vh;
+      }
+
+      & > div:nth-child(1){
+        width: 80%;
+      }
+
+      & > div {
+
+        & > img {
+          width: 70%;
+        }
+
+        & > h3 {
+          font-weight: 800;
+          font-size: 80%;
+
+          @include mobile {
+            font-size: 30%;
+          }
+
+        }
+
+        & > h5 {
+          color: $purple;
+          font-weight: 200;
+          font-size: 60%;
+          margin-bottom: 7%;
+
+          @include mobile {
+            font-size: 40%;
+          }
+        }
+
+        & > p {
+          width: 92%;
+          font-size: 70%;
+
+          @include mobile {
+            font-size: 40%;
+          }
+        }
+      }
+    }
+
+    & > .testimonial_gradient {
+      @extend %align-item-row;
+      margin: auto;
+      border-radius: 20px;
+      background: linear-gradient(270deg, #9C69E2 9.75%, rgba(255, 255, 255, 1) 100%);
+      border: 1px solid #9C69E2;
+      box-sizing: border-box;
+      padding: 4% 3%;
+      box-shadow: 0px 10px 0px rgba(#9663e0, 1);
+
+      @include mobile {
+        display: none;
+      }
+
+      & > div:nth-child(1){
+        width: 80%;
+      }
+
+      & > div {
+
+        & > img {
+          width: 70%;
+        }
+
+        & > h3 {
+          font-weight: 800;
+          font-size: 80%;
+        }
+
+
+        & > h5 {
+          color: $purple;
+          font-weight: 200;
+          font-size: 60%;
+          margin-bottom: 10%;
+        }
+
+        & > p {
+          width: 70%;
+          font-size: 68%;
+        }
+      }
+    }
+  }
+
+  & .circnarrows {
+    width: 89%;
+    margin: auto;
+    margin-top: 4%;
+    @extend %align-item-row;
+
+    & > .arrows {
+      @extend %align-item-row;
+      justify-content: flex-end;
+      width: 50%;
+      color: rgb(194, 191, 191);
+      text-align: end;
+
+      & > .white-arrow_long {
+        color: $white;
+        font-size: 22px;
+      }
+
+      & > .white-arrow_short {
+        font-size: 11px;
+        font-weight: 600;
+        margin-top: 2.35%;
+        margin-left: 1.8%;
+
+        @include tablet {
+          margin-top: 5%;
+        }
+
+        @include mobile {
+          margin-top: 7%;
+        }
+      }
+    }
+  }
+}
+
+.circles {
+  @extend %align-item-row;
+  width: 50%;
+  align-items: center;
+  justify-content: end;
+
+  & > .circle {
+    background-color: $white;
+    width: 3px;
+    height: 3px;
+    margin-left: 2%;
+    border-radius: 50%;
+  }
+
+  & > .circle.circle_pink {
+    background-color: $pink;
+    width: 6px;
+    height: 6px;
+  }
+}
+
+hr {
+  background: $purple;
+  opacity: 0.2;
+  margin: 5% 0;
+}
+
+.footer {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 3%;
+
+  &__header {
+    @extend %align-item-row;
+    @include mobile {
+      display: block;
+    }
+
+    & > div {
+      width: 50%;
+      margin-bottom: 7%;
+
+      @include tablet {
+        width: 100%;
+      }
+    }
+
+    & > div:nth-child(1) {
+      & > h1 {
+        @include mobile {
+          width: 100%;
+        }
+      }
+
+      @include mobile {
+        text-align: center;
+      }
+
+      & > p {
+        padding-top: 2.5%;
+        font-size: 65%;
+      }
+
+      @include tablet {
+        font-size: 60%;
+      }
+    }
+
+    & > div:nth-child(2) {
+      text-align: end;
+
+      @include tablet {
+        text-align: start;
+      }
+
+      @include mobile {
+        text-align: center;
+      }
+
+      & > button:nth-child(1) {
+        background: $pink;
+        padding: 3% 0;
+        border-radius: 20px;
+        font-size: 70%;
+        margin-right: 2%;
+
+        @include tablet {
+        padding: 3% 0;
+        width: 25%;
+        font-size: 50%;
+        text-align: center;
+      }
+      }
+
+      & > button:nth-child(2) {
+        @include tablet {
+        padding: 3% 0;
+        width: 50%;
+        font-size: 50%;
+        text-align: center;
+      }
+
+      @include mobile {
+        width: 40%;
+      }
+    }
+  }
+  }
+
+  &__info {
+    display: flex;
+    color: $blue;
+
+    @include mobile {
+      display: block;
+    }
+
+    & > div {
+      flex: 1;
+
+      @include mobile {
+        text-align: center;
+      }
+
+      & > h5 {
+        font-size: 60%;
+        margin-top: 2%;
+        margin-bottom: 11%;
+
+        @include tablet {
+          font-size: 50%;
+        }
+
+        @include mobile {
+          margin-top: 5%;
+          margin-bottom: 2%;
+        }
+      }
+
+      & > p {
+        font-size: 60%;
+      }
+
+      & > .circles {
+        @include mobile {
+          text-align: center;
+          margin: auto;
+          margin-right: 10%;
+        }
+        & > .circle {
+          background: $grey;
+          opacity: 0.2;
+          margin-right: 2%;
+          width: 25px;
+          height: 25px;
+
+          @include tablet {
+            width: 10px;
+            height: 10px;
+          }
+        }
+      }
+    }
+
+    & > div:nth-child(1) {
+      flex: 2;
+
+      & > div:nth-child(2) {
+        p {
+          font-size: 60%;
+          padding: 1%;
+
+          @include tablet {
+          font-size: 50%;
+        }
+        }
+        p:nth-child(1) {
+          font-weight: bold
+        }
+      }
+    }
+
+    &__title {
+      @extend %align-item-row;
+      flex: 2;
+      margin-bottom: 2%;
+
+      & > a {
+        > img {
+          width: 55%;
+
+          @include tablet {
+            width: 45%;
+          }
+        }
+
+        &:nth-child(1){
+          text-align: center;
+
+          @include mobile {
+            margin-left: 30%;
+          }
+        }
+
+        &:nth-child(2){
+          text-align: start;
+
+          @include mobile {
+            text-align: center;
+          }
+        }
+      }
+
+      & > h3 {
+        width: 80%;
+        margin-left: 3%;
+
+        @include tablet {
+          font-size: 50%;
+        }
+
+        @include mobile {
+          text-align: start;
+          margin-top: 2%;
+        }
+      }
+    }
+  }
+}
